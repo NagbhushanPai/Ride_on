@@ -6,11 +6,11 @@
     <title>CyclePath Rentals - Rent Your Perfect Bike</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/filter-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <script src="js/cycles.js"></script>
-    <script src="js/app.js"></script>
+
     <header>
         <div class="logo">
             <i class="fas fa-bicycle"></i>
@@ -20,8 +20,8 @@
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="pages/about.html">About Us</a></li>
-                <li><a href="#" id="login-btn">Login / Register</a></li>
-                <li><a href="#" id="dashboard-btn" class="hidden">My Dashboard</a></li>
+                <li><a href="pages/login.html" id="login-btn">Login / Register</a></li>
+                <li><a href="pages/dashbord.html" id="dashboard-btn" class="hidden">My Dashboard</a></li>
             </ul>
         </nav>
         <div class="mobile-menu-toggle">
@@ -86,7 +86,34 @@
             </div>
             
             <div class="cycles-grid" id="cycles-container">
-                <!-- Cycle cards will be dynamically inserted here -->
+                <div class="cycle-card">
+                    <img src="assets/" alt="Mountain Bike">
+                    <h3>Mountain Bike</h3>
+                    <p>Perfect for off-road adventures</p>
+                    <p class="price">$20/day</p>
+                    <button class="btn primary-btn book-btn" data-cycle-id="1">Book Now</button>
+                </div>
+                <div class="cycle-card">
+                    <img src="assets/hero_bg.jpg" alt="Road Bike">
+                    <h3>Road Bike</h3>
+                    <p>Ideal for long-distance rides</p>
+                    <p class="price">$25/day</p>
+                    <button class="btn primary-btn book-btn" data-cycle-id="2">Book Now</button>
+                </div>
+                <div class="cycle-card">
+                    <img src="assets/" alt="Hybrid Bike">
+                    <h3>Hybrid Bike</h3>
+                    <p>A mix of comfort and performance</p>
+                    <p class="price">$22/day</p>
+                    <button class="btn primary-btn book-btn" data-cycle-id="3">Book Now</button>
+                </div>
+                <div class="cycle-card">
+                    <img src="assets/" alt="Electric Bike">
+                    <h3>Electric Bike</h3>
+                    <p>Effortless rides with electric assistance</p>
+                    <p class="price">$30/day</p>
+                    <button class="btn primary-btn book-btn" data-cycle-id="4">Book Now</button>
+                </div>
             </div>
         </section>
         
