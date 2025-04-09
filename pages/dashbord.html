@@ -1,0 +1,39 @@
+<script>
+    function updateDashboard() {
+        const bookings = JSON.parse(localStorage.getItem('bookings')) || [];
+        displayBookings(bookings);
+    }
+
+    function displayBookings(bookingsList) {
+        const bookingsContainer = document.getElementById('bookings-container');
+        if (!bookingsContainer) return;
+
+        bookingsContainer.innerHTML = bookingsList.map(booking => {
+            const cycle = window.cycles.getCycleById(booking.cycleId);
+            return `
+                <div class="booking-item">
+                    <div class="booking-item-header">
+                        <h3 class="booking-cycle-name">${cycle ? cycle.name : 'Unknown Cycle'}</h3>
+                        <span class="booking-status status-${booking.status.toLowerCase()}">${booking.status}</span>
+                    </div>
+                    <div class="booking-details-row">
+                        <div class="booking-detail">
+                            <span class="booking-detail-label">Start Date:</span>
+                            <span class="booking-detail-value">${new Date(booking.startDate).toLocaleDateString()}</span>
+                        </div>
+                        <div class="booking-detail">
+                            <span class="booking-detail-label">End Date:</span>
+                            <span class="booking-detail-value">${new Date(booking.endDate).toLocaleDateString()}</span>
+                        </div>
+                        <div class="booking-detail">
+                            <span class="booking-detail-label">Location:</span>
+                            <span class="booking-detail-value">${booking.location}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    document.addEventListener('DOMContentLoaded', updateDashboard);
+</script>
