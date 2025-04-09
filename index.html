@@ -7,319 +7,362 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/filter-styles.css">
+    <link rel="stylesheet" href="css/royal-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <div class="logo">
-            <i class="fas fa-bicycle"></i>
-            <span>CyclePath Rentals</span>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="pages/about.html">About Us</a></li>
-                <li><a href="pages/login.html" id="login-btn">Login / Register</a></li>
-                <li><a href="pages/dashbord.html" id="dashboard-btn" class="hidden">My Dashboard</a></li>
-            </ul>
-        </nav>
-        <div class="mobile-menu-toggle">
-            <i class="fas fa-bars"></i>
+    <!-- Royal Brothers Style Header -->
+    <header class="rb-header">
+        <div class="rb-container">
+            <div class="rb-header-top">
+                <div class="rb-contact">
+                    <div class="rb-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </div>
+                    <div class="rb-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>support@cyclepathrentals.com</span>
+                    </div>
+                </div>
+                <div class="rb-social">
+                    <a href="#" class="rb-social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="rb-social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="rb-social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="rb-header-main">
+                <a href="index.html" class="rb-logo">
+                    <i class="fas fa-bicycle"></i>
+                    <span>CyclePath</span>
+                </a>
+                <nav class="rb-nav">
+                    <a href="#" class="rb-nav-item active">Home</a>
+                    <a href="#" class="rb-nav-item">Tariff</a>
+                    <a href="#" class="rb-nav-item">What's New</a>
+                    <a href="#" class="rb-nav-item">Offers</a>
+                    <a href="#" class="rb-nav-item">Partner with Us</a>
+                    <a href="#" class="rb-nav-item">About Us</a>
+                </nav>
+                <div class="rb-buttons">
+                    <a href="login.html" class="rb-btn rb-btn-outline">Login</a>
+                    <a href="dashboard.html" class="rb-btn rb-btn-primary">My Bookings</a>
+                </div>
+                <div class="rb-mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Explore the World on Two Wheels</h1>
-                <p>Choose from our premium selection of cycles for your next adventure</p>
-                <a href="#cycle-catalog" class="btn primary-btn">Browse Cycles</a>
+        <!-- Hero Section with Search Box -->
+        <section class="rb-hero">
+            <div class="rb-container">
+                <div class="rb-hero-content">
+                    <h1 class="rb-hero-title">Explore the City on Two Wheels</h1>
+                    <p class="rb-hero-subtitle">Choose from our premium selection of cycles for your next adventure</p>
+                </div>
             </div>
         </section>
 
-        <section id="cycle-catalog" class="cycle-catalog">
-            <h2 class="section-title">Our Bicycle Collection</h2>
-            
-            <div class="filters">
-                <div class="filter-group">
-                    <label for="cycle-type">Cycle Type</label>
-                    <select id="cycle-type">
-                        <option value="all">All Types</option>
-                        <option value="mountain">Mountain Bike</option>
-                        <option value="road">Road Bike</option>
-                        <option value="hybrid">Hybrid Bike</option>
-                        <option value="city">City Bike</option>
-                        <option value="electric">Electric Bike</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label for="cycle-size">Size</label>
-                    <select id="cycle-size">
-                        <option value="all">All Sizes</option>
-                        <option value="small">Small (5'0" - 5'5")</option>
-                        <option value="medium">Medium (5'6" - 5'10")</option>
-                        <option value="large">Large (5'11" - 6'4")</option>
-                        <option value="xlarge">X-Large (6'5"+)</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label for="date-range">Rental Dates</label>
-                    <div class="date-inputs">
-                        <input type="date" id="start-date" class="date-input" title="Select the start date for your rental">
-                        <span>to</span>
-                        <input type="date" id="end-date" class="date-input" title="Select the end date for your rental">
+        <!-- Search Box -->
+        <section class="rb-search-container">
+            <div class="rb-container">
+                <form class="rb-search-form">
+                    <div class="rb-search-group">
+                        <label for="rb-pickup-location">Pickup Location</label>
+                        <select class="rb-search-input" id="rb-pickup-location">
+                            <option value="">Select Location</option>
+                            <option value="downtown">Downtown Center</option>
+                            <option value="uptown">Uptown Shop</option>
+                            <option value="riverside">Riverside Hub</option>
+                            <option value="parkside">Parkside Station</option>
+                        </select>
+                    </div>
+                    <div class="rb-search-group">
+                        <label for="rb-pickup-date">Pickup Date & Time</label>
+                        <input type="datetime-local" class="rb-search-input" id="rb-pickup-date">
+                    </div>
+                    <div class="rb-search-group">
+                        <label for="rb-dropoff-date">Dropoff Date & Time</label>
+                        <input type="datetime-local" class="rb-search-input" id="rb-dropoff-date">
+                    </div>
+                    <button type="submit" class="rb-search-btn">Search</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Bikes Section -->
+        <section class="rb-product-section">
+            <div class="rb-container">
+                <h2 class="rb-section-title">Our Bicycle Collection</h2>
+
+                <!-- Filters Bar -->
+                <div class="rb-filters">
+                    <div class="rb-filter-row">
+                        <div class="rb-filter-item">
+                            <label class="rb-filter-label">Cycle Type</label>
+                            <select class="rb-filter-select" id="rb-cycle-type">
+                                <option value="all">All Types</option>
+                                <option value="mountain">Mountain Bike</option>
+                                <option value="road">Road Bike</option>
+                                <option value="hybrid">Hybrid Bike</option>
+                                <option value="city">City Bike</option>
+                                <option value="electric">Electric Bike</option>
+                            </select>
+                        </div>
+                        <div class="rb-filter-item">
+                            <label class="rb-filter-label">Size</label>
+                            <select class="rb-filter-select" id="rb-cycle-size">
+                                <option value="all">All Sizes</option>
+                                <option value="small">Small (5'0" - 5'5")</option>
+                                <option value="medium">Medium (5'6" - 5'10")</option>
+                                <option value="large">Large (5'11" - 6'4")</option>
+                                <option value="xlarge">X-Large (6'5"+)</option>
+                            </select>
+                        </div>
+                        <div class="rb-filter-item">
+                            <label class="rb-filter-label">Sort By</label>
+                            <select class="rb-filter-select" id="rb-sort-by">
+                                <option value="recommended">Recommended</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="rating">Highest Rated</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="filter-group">
-                    <label for="sort-by">Sort By</label>
-                    <select id="sort-by">
-                        <option value="recommended">Recommended</option>
-                        <option value="price-low">Price: Low to High</option>
-                        <option value="price-high">Price: High to Low</option>
-                        <option value="rating">Highest Rated</option>
-                    </select>
-                </div>
-            </div>
-            
-            <div class="cycles-grid" id="cycles-container">
-                <div class="cycle-card">
-                    <img src="assets/" alt="Mountain Bike">
-                    <h3>Mountain Bike</h3>
-                    <p>Perfect for off-road adventures</p>
-                    <p class="price">$20/day</p>
-                    <button class="btn primary-btn book-btn" data-cycle-id="1">Book Now</button>
-                </div>
-                <div class="cycle-card">
-                    <img src="assets/hero_bg.jpg" alt="Road Bike">
-                    <h3>Road Bike</h3>
-                    <p>Ideal for long-distance rides</p>
-                    <p class="price">$25/day</p>
-                    <button class="btn primary-btn book-btn" data-cycle-id="2">Book Now</button>
-                </div>
-                <div class="cycle-card">
-                    <img src="assets/" alt="Hybrid Bike">
-                    <h3>Hybrid Bike</h3>
-                    <p>A mix of comfort and performance</p>
-                    <p class="price">$22/day</p>
-                    <button class="btn primary-btn book-btn" data-cycle-id="3">Book Now</button>
-                </div>
-                <div class="cycle-card">
-                    <img src="assets/" alt="Electric Bike">
-                    <h3>Electric Bike</h3>
-                    <p>Effortless rides with electric assistance</p>
-                    <p class="price">$30/day</p>
-                    <button class="btn primary-btn book-btn" data-cycle-id="4">Book Now</button>
+
+                <!-- Product Grid -->
+                <div class="rb-bikes-grid" id="rb-cycles-container">
+                    <div class="rb-bike-card">
+                        <img src="assets/mountain.jpeg" alt="Mountain Bike" class="rb-bike-img">
+                        <div class="rb-bike-content">
+                            <h3 class="rb-bike-title">Mountain Bike</h3>
+                            <p class="rb-bike-desc">Perfect for off-road adventures and trail riding</p>
+                            <p class="rb-bike-price">$20/day</p>
+                            <button class="rb-btn rb-btn-primary rb-bike-book" data-cycle-id="1">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="rb-bike-card">
+                        <img src="assets/hero_bg.jpg" alt="Road Bike" class="rb-bike-img">
+                        <div class="rb-bike-content">
+                            <h3 class="rb-bike-title">Road Bike</h3>
+                            <p class="rb-bike-desc">Ideal for long-distance rides and smooth surfaces</p>
+                            <p class="rb-bike-price">$25/day</p>
+                            <button class="rb-btn rb-btn-primary rb-bike-book" data-cycle-id="2">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="rb-bike-card">
+                        <img src="assets/hybrid.jpeg" alt="Hybrid Bike" class="rb-bike-img">
+                        <div class="rb-bike-content">
+                            <h3 class="rb-bike-title">Hybrid Bike</h3>
+                            <p class="rb-bike-desc">A mix of comfort and performance for varied terrain</p>
+                            <p class="rb-bike-price">$22/day</p>
+                            <button class="rb-btn rb-btn-primary rb-bike-book" data-cycle-id="3">Book Now</button>
+                        </div>
+                    </div>
+                    <div class="rb-bike-card">
+                        <img src="assets/electric.jpeg" alt="Electric Bike" class="rb-bike-img">
+                        <div class="rb-bike-content">
+                            <h3 class="rb-bike-title">Electric Bike</h3>
+                            <p class="rb-bike-desc">Effortless rides with electric assistance for any journey</p>
+                            <p class="rb-bike-price">$30/day</p>
+                            <button class="rb-btn rb-btn-primary rb-bike-book" data-cycle-id="4">Book Now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-        
-        <section class="features-section">
-            <h2 class="section-title">Why Choose CyclePath?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <i class="fas fa-medal"></i>
-                    <h3>Premium Cycles</h3>
-                    <p>Quality bikes maintained to the highest standards</p>
+
+        <!-- Benefits Section -->
+        <section class="rb-benefits">
+            <div class="rb-container">
+                <h2 class="rb-section-title">Why Choose CyclePath?</h2>
+                <div class="rb-benefits-grid">
+                    <div class="rb-benefit-card">
+                        <div class="rb-benefit-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3 class="rb-benefit-title">Premium Cycles</h3>
+                        <p class="rb-benefit-text">Quality bikes maintained to the highest standards for a smooth ride experience.</p>
+                    </div>
+                    <div class="rb-benefit-card">
+                        <div class="rb-benefit-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3 class="rb-benefit-title">Easy Booking</h3>
+                        <p class="rb-benefit-text">Simple and flexible reservation system to get you riding with minimal hassle.</p>
+                    </div>
+                    <div class="rb-benefit-card">
+                        <div class="rb-benefit-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3 class="rb-benefit-title">Multiple Locations</h3>
+                        <p class="rb-benefit-text">Convenient pickup and drop-off points throughout the city for your convenience.</p>
+                    </div>
+                    <div class="rb-benefit-card">
+                        <div class="rb-benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="rb-benefit-title">Safety First</h3>
+                        <p class="rb-benefit-text">Helmets and safety gear included with every rental for your protection.</p>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-calendar-check"></i>
-                    <h3>Easy Booking</h3>
-                    <p>Simple and flexible reservation system</p>
+            </div>
+        </section>
+
+        <!-- Locations Section -->
+        <section class="rb-locations">
+            <div class="rb-container">
+                <h2 class="rb-section-title">Our Pickup Locations</h2>
+                <div class="rb-locations-grid">
+                    <div class="rb-location-card">
+                        <h3 class="rb-location-name">Downtown Center</h3>
+                        <p class="rb-location-address">123 Main St, City Center</p>
+                        <a href="#" class="rb-location-link">View on Map</a>
+                    </div>
+                    <div class="rb-location-card">
+                        <h3 class="rb-location-name">Uptown Shop</h3>
+                        <p class="rb-location-address">456 North Ave, Uptown Area</p>
+                        <a href="#" class="rb-location-link">View on Map</a>
+                    </div>
+                    <div class="rb-location-card">
+                        <h3 class="rb-location-name">Riverside Hub</h3>
+                        <p class="rb-location-address">789 River Rd, Riverside</p>
+                        <a href="#" class="rb-location-link">View on Map</a>
+                    </div>
+                    <div class="rb-location-card">
+                        <h3 class="rb-location-name">Parkside Station</h3>
+                        <p class="rb-location-address">101 Park Blvd, Near City Park</p>
+                        <a href="#" class="rb-location-link">View on Map</a>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <h3>Multiple Locations</h3>
-                    <p>Convenient pickup and drop-off points</p>
+            </div>
+        </section>
+
+        <!-- City Info Section (Similar to Royal Brothers) -->
+        <section class="rb-city-section">
+            <div class="rb-container">
+                <h2 class="rb-section-title">Bike Rent in Your City</h2>
+                <div class="rb-city-content">
+                    <p class="rb-city-text">
+                        Though there are other metropolitan cities in the country, have you ever wondered why our city is the most desired place for many people? Beyond its business hubs, cultural attractions, parks, and nightlife, the city is loved for its pleasant atmosphere and accessibility.
+                    </p>
+                    <p class="rb-city-text">
+                        Known for its excellent infrastructure and numerous attractions, it's perfect to explore on two wheels. Whether you're a local or a visitor, renting a bike is the best way to experience everything the city has to offer.
+                    </p>
+                    
+                    <h3 class="rb-city-subtitle">Why are bike rentals the best option?</h3>
+                    <p class="rb-city-text">
+                        Cabs can be quite expensive. For a one-way trip, you could end up paying far more than you expect. During peak hours, the fares double, leaving you with no option but to pay the higher fare just to reach your destination.
+                    </p>
+                    <p class="rb-city-text">
+                        Though public transportation is widespread, it can be crowded and may not always operate on time. This may make your journey stressful and inconvenient. With CyclePath bike rentals, you can cover longer distances and save your hard-earned money as well. It might be hard to believe, but our bike rental fares start as low as $17 per hour.
+                    </p>
+                    
+                    <h3 class="rb-city-subtitle">Bike rentals - the best for residents!</h3>
+                    <p class="rb-city-text">
+                        When bikes are the only way to escape the chaos of the city, owning one can be a bit of a challenge. From maintenance and insurance to depreciation, managing a bike can get expensive. By opting for CyclePath rental services, you can skip all your worries. We take care of the maintenance and insurance so that a bike of your choice is ready as and when you need it.
+                    </p>
+                    <p class="rb-city-text">
+                        Whether you're heading out on a date, attending an interview, or for weekend getaways, we have the perfect bike that suits every occasion. Why settle for boring when you can ride smart?
+                    </p>
                 </div>
-                <div class="feature-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>Safety First</h3>
-                    <p>Helmets and safety gear included with every rental</p>
+            </div>
+        </section>
+
+        <!-- Our Presence Section -->
+        <section class="rb-presence-section">
+            <div class="rb-container">
+                <h2 class="rb-section-title">Our Presence</h2>
+                <div class="rb-presence-grid">
+                    <a href="#" class="rb-presence-link">Bikes for rent in Downtown</a>
+                    <a href="#" class="rb-presence-link">Bikes for rent in Uptown</a>
+                    <a href="#" class="rb-presence-link">Bikes for rent in Riverside</a>
+                    <a href="#" class="rb-presence-link">Bikes for rent in Parkside</a>
+                    <a href="#" class="rb-presence-link">Bikes for rent in University Area</a>
+                    <a href="#" class="rb-presence-link">Bikes for rent in Shopping District</a>
+                    <a href="#" class="rb-presence-link">Bikes for rent in Business Hub</a>
+                    <a href="#" class="rb-presence-link">Bikes for rent in Arts District</a>
+                    <a href="#" class="rb-presence-link">Bikes for rent in Sports Center</a>
+                    <a href="#" class="rb-presence-link">Bikes for rent in Historical Area</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <i class="fas fa-bicycle"></i>
-                <span>CyclePath Rentals</span>
-            </div>
-            <div class="footer-links">
-                <div class="footer-column">
+    <!-- Royal Brothers Style Footer -->
+    <footer class="rb-footer">
+        <div class="rb-container">
+            <div class="rb-footer-container">
+                <div class="rb-footer-column">
+                    <h4>CyclePath Rentals</h4>
+                    <div class="rb-footer-contact">
+                        <div class="rb-footer-contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>support@cyclepathrentals.com</span>
+                        </div>
+                        <div class="rb-footer-contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="rb-footer-column">
                     <h4>Company</h4>
-                    <ul>
-                        <li><a href="pages/about.html">About Us</a></li>
-                        <li><a href="#">Our Locations</a></li>
+                    <ul class="rb-footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
                         <li><a href="#">Contact Us</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Rentals</h4>
-                    <ul>
-                        <li><a href="#">Mountain Bikes</a></li>
-                        <li><a href="#">Road Bikes</a></li>
-                        <li><a href="#">Electric Bikes</a></li>
+                <div class="rb-footer-column">
+                    <h4>Policies</h4>
+                    <ul class="rb-footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Refund Policy</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
+                <div class="rb-footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="rb-footer-links">
+                        <li><a href="#">Tariff</a></li>
+                        <li><a href="#">Offers</a></li>
+                        <li><a href="#">Riding Gear</a></li>
+                        <li><a href="#">Partner with Us</a></li>
                     </ul>
+                </div>
+                <div class="rb-footer-column">
+                    <h4>Download our App</h4>
+                    <div class="rb-download-apps">
+                        <a href="#" class="rb-download-btn">
+                            <i class="fab fa-google-play"></i>
+                            <div>
+                                <span>GET IT ON</span>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                        <a href="#" class="rb-download-btn">
+                            <i class="fab fa-apple"></i>
+                            <div>
+                                <span>Download on the</span>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 CyclePath Rentals. All rights reserved.</p>
+            <div class="rb-footer-bottom">
+                <p>&copy; 2023 CyclePath Rentals. All rights reserved.</p>
+            </div>
         </div>
     </footer>
-
-    <!-- Booking Modal -->
-    <div id="booking-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Book Your Bicycle</h2>
-            <div class="booking-details">
-                <div class="cycle-preview">
-                    <img id="booking-cycle-image" src="" alt="Selected bicycle">
-                    <h3 id="booking-cycle-name"></h3>
-                    <p id="booking-cycle-type"></p>
-                    <p id="booking-cycle-price"></p>
-                </div>
-                <div class="booking-form">
-                    <form id="booking-form">
-                        <input type="hidden" id="booking-cycle-id">
-                        <div class="date-group">
-                            <div class="form-group">
-                                <label for="booking-start-date">Start Date</label>
-                                <input type="date" id="booking-start-date" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="booking-end-date">End Date</label>
-                                <input type="date" id="booking-end-date" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="booking-location">Pickup Location</label>
-                            <select id="booking-location" required>
-                                <option value="">Select a location</option>
-                                <option value="downtown">Downtown Center</option>
-                                <option value="uptown">Uptown Shop</option>
-                                <option value="riverside">Riverside Hub</option>
-                                <option value="parkside">Parkside Station</option>
-                            </select>
-                        </div>
-                        <div class="accessories">
-                            <h4>Accessories</h4>
-                            <div class="accessory-item">
-                                <input type="checkbox" id="helmet" checked>
-                                <label for="helmet">Helmet (Included)</label>
-                            </div>
-                            <div class="accessory-item">
-                                <input type="checkbox" id="lock">
-                                <label for="lock">Bike Lock ($5/day)</label>
-                            </div>
-                            <div class="accessory-item">
-                                <input type="checkbox" id="basket">
-                                <label for="basket">Basket ($3/day)</label>
-                            </div>
-                            <div class="accessory-item">
-                                <input type="checkbox" id="lights">
-                                <label for="lights">Light Set ($4/day)</label>
-                            </div>
-                        </div>
-                        <div class="form-actions">
-                            <button type="submit" class="btn primary-btn">Confirm Booking</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- User Modal (Login/Register) -->
-    <div id="user-modal" class="modal user-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="tabs">
-                <div class="tab active" data-tab="login">Login</div>
-                <div class="tab" data-tab="register">Register</div>
-            </div>
-            <div class="tab-content active" id="login-content">
-                <form id="login-form">
-                    <div class="form-group">
-                        <label for="login-email">Email</label>
-                        <input type="email" id="login-email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="login-password">Password</label>
-                        <input type="password" id="login-password" required>
-                    </div>
-                    <div class="form-actions">
-                        <button type="submit" class="btn primary-btn">Login</button>
-                    </div>
-                </form>
-            </div>
-            <div class="tab-content" id="register-content">
-                <form id="register-form">
-                    <div class="form-group">
-                        <label for="register-name">Full Name</label>
-                        <input type="text" id="register-name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="register-email">Email</label>
-                        <input type="email" id="register-email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="register-phone">Phone Number</label>
-                        <input type="tel" id="register-phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="register-password">Password</label>
-                        <input type="password" id="register-password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="register-confirm-password">Confirm Password</label>
-                        <input type="password" id="register-confirm-password" required>
-                    </div>
-                    <div class="form-actions">
-                        <button type="submit" class="btn primary-btn">Register</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Confirmation Modal -->
-    <div id="confirmation-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <div class="confirmation-content">
-                <i class="fas fa-check-circle success-icon"></i>
-                <h2>Booking Confirmed!</h2>
-                <p>Your bicycle has been successfully booked.</p>
-                <div class="booking-summary">
-                    <h3>Booking Details</h3>
-                    <p id="summary-cycle"></p>
-                    <p id="summary-dates"></p>
-                    <p id="summary-location"></p>
-                    <p id="summary-accessories"></p>
-                </div>
-                <div class="confirmation-actions">
-                    <button class="btn primary-btn" id="view-dashboard-btn">View My Bookings</button>
-                    <button class="btn secondary-btn" id="close-confirmation-btn">Continue Browsing</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="js/cycles.js"></script>
     <script src="js/booking.js"></script>

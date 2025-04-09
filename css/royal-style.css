@@ -1,0 +1,811 @@
+/* Royal Brothers-inspired styling for CyclePath Rentals */
+
+:root {
+    --primary: #3e77ff;
+    --primary-dark: #2e67ef;
+    --secondary: #f5f5f5;
+    --text-dark: #333333;
+    --text-light: #666666;
+    --text-muted: #8e8e8e;
+    --border-color: #e0e0e0;
+    --success: #4caf50;
+    --warning: #ff9800;
+    --error: #f44336;
+    --bg-light: #ffffff;
+    --bg-muted: #f9f9f9;
+    --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background-color: var(--bg-light);
+    margin: 0;
+    padding: 0;
+}
+
+/* Header and Navigation */
+.rb-header {
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.rb-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.rb-header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.rb-contact {
+    display: flex;
+    align-items: center;
+}
+
+.rb-contact-item {
+    margin-right: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--text-light);
+}
+
+.rb-contact-item i {
+    margin-right: 0.5rem;
+    color: var(--primary);
+}
+
+.rb-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.rb-social-icon {
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    transition: color 0.2s;
+}
+
+.rb-social-icon:hover {
+    color: var(--primary);
+}
+
+.rb-header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.rb-logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    text-decoration: none;
+}
+
+.rb-logo i {
+    color: var(--primary);
+    font-size: 1.75rem;
+    margin-right: 0.75rem;
+}
+
+.rb-nav {
+    display: flex;
+    gap: 2rem;
+}
+
+.rb-nav-item {
+    font-weight: 500;
+    color: var(--text-dark);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.rb-nav-item:hover, 
+.rb-nav-item.active {
+    color: var(--primary);
+}
+
+.rb-nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -0.5rem;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary);
+}
+
+.rb-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.rb-btn {
+    padding: 0.625rem 1.25rem;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rb-btn-primary {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+}
+
+.rb-btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.rb-btn-outline {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.rb-btn-outline:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Hero Section */
+.rb-hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/hero_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 0;
+    color: white;
+}
+
+.rb-hero-content {
+    max-width: 650px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.rb-hero-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.rb-hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Search Section */
+.rb-search-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: -4rem auto 0;
+    position: relative;
+    z-index: 10;
+}
+
+.rb-search-form {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+.rb-search-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+.rb-search-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.rb-search-input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.rb-search-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(62, 119, 255, 0.2);
+    outline: none;
+}
+
+.rb-search-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.875rem 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    min-width: 120px;
+    margin-top: auto;
+}
+
+.rb-search-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Locations Dropdown */
+.rb-location-select {
+    position: relative;
+}
+
+.rb-current-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.rb-current-location:hover {
+    background-color: var(--bg-muted);
+}
+
+.rb-current-location i {
+    color: var(--primary);
+}
+
+/* Product Grid */
+.rb-product-section {
+    padding: 4rem 0;
+}
+
+.rb-section-title {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.rb-bikes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.rb-bike-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rb-bike-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+.rb-bike-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.rb-bike-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.rb-bike-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.rb-bike-desc {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.rb-bike-price {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.rb-bike-book {
+    width: 100%;
+}
+
+/* Filters Section */
+.rb-filters {
+    margin-bottom: 2rem;
+    background-color: var(--bg-muted);
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.rb-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.rb-filter-item {
+    flex: 1;
+    min-width: 180px;
+}
+
+.rb-filter-label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.rb-filter-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: white;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem;
+}
+
+/* Benefits Section */
+.rb-benefits {
+    padding: 4rem 0;
+    background-color: var(--bg-muted);
+}
+
+.rb-benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.rb-benefit-card {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s;
+}
+
+.rb-benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.rb-benefit-icon {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(62, 119, 255, 0.1);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 1.75rem;
+}
+
+.rb-benefit-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.rb-benefit-text {
+    color: var(--text-muted);
+}
+
+/* Locations Section */
+.rb-locations {
+    padding: 4rem 0;
+}
+
+.rb-locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.rb-location-card {
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.rb-location-card:hover {
+    transform: translateY(-4px);
+}
+
+.rb-location-name {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.rb-location-address {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.rb-location-link {
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.rb-location-link:hover {
+    text-decoration: underline;
+}
+
+/* Info Section */
+.rb-info-section {
+    padding: 4rem 0;
+    background-color: var(--bg-muted);
+}
+
+.rb-info-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.rb-info-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.rb-info-text {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.rb-info-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    color: var(--text-dark);
+}
+
+/* Footer */
+.rb-footer {
+    background-color: #f5f5f5;
+    padding-top: 4rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.rb-footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 3rem;
+}
+
+.rb-footer-column h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.rb-footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rb-footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.rb-footer-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.rb-footer-links a:hover {
+    color: var(--primary);
+}
+
+.rb-footer-bottom {
+    margin-top: 3rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.rb-footer-contact {
+    margin-bottom: 1.5rem;
+}
+
+.rb-footer-contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: var(--text-light);
+}
+
+.rb-footer-contact-item i {
+    margin-right: 0.75rem;
+    color: var(--primary);
+    font-size: 1.125rem;
+    min-width: 1.5rem;
+}
+
+.rb-download-apps {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.rb-download-btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--text-dark);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+.rb-download-btn i {
+    font-size: 1.5rem;
+    margin-right: 0.75rem;
+}
+
+.rb-download-btn span {
+    font-size: 0.75rem;
+    display: block;
+    opacity: 0.8;
+}
+
+.rb-download-btn strong {
+    font-size: 1rem;
+}
+
+/* Mobile Menu */
+.rb-mobile-menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .rb-nav, .rb-contact {
+        display: none;
+    }
+    
+    .rb-mobile-menu-toggle {
+        display: block;
+    }
+    
+    .rb-header-main {
+        padding: 0.75rem 0;
+    }
+    
+    .rb-hero {
+        padding: 4rem 0;
+    }
+    
+    .rb-hero-title {
+        font-size: 2rem;
+    }
+    
+    .rb-search-container {
+        margin-top: -2rem;
+    }
+    
+    .rb-search-form {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 767px) {
+    .rb-container {
+        padding: 0 1rem;
+    }
+    
+    .rb-hero {
+        padding: 3rem 0;
+    }
+    
+    .rb-hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .rb-hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .rb-search-container {
+        margin: 0;
+        border-radius: 0;
+    }
+    
+    .rb-filter-row {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .rb-filter-item {
+        width: 100%;
+    }
+    
+    .rb-bikes-grid, .rb-benefits-grid, .rb-locations-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .rb-section-title {
+        font-size: 1.5rem;
+    }
+    
+    .rb-footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+/* Utility Classes */
+.rb-mt-0 { margin-top: 0; }
+.rb-mt-1 { margin-top: 0.25rem; }
+.rb-mt-2 { margin-top: 0.5rem; }
+.rb-mt-3 { margin-top: 1rem; }
+.rb-mt-4 { margin-top: 1.5rem; }
+.rb-mt-5 { margin-top: 3rem; }
+
+.rb-mb-0 { margin-bottom: 0; }
+.rb-mb-1 { margin-bottom: 0.25rem; }
+.rb-mb-2 { margin-bottom: 0.5rem; }
+.rb-mb-3 { margin-bottom: 1rem; }
+.rb-mb-4 { margin-bottom: 1.5rem; }
+.rb-mb-5 { margin-bottom: 3rem; }
+
+.rb-py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.rb-py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.rb-py-3 { padding-top: 1rem; padding-bottom: 1rem; }
+.rb-py-4 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+.rb-py-5 { padding-top: 3rem; padding-bottom: 3rem; }
+
+.rb-px-1 { padding-left: 0.25rem; padding-right: 0.25rem; }
+.rb-px-2 { padding-left: 0.5rem; padding-right: 0.5rem; }
+.rb-px-3 { padding-left: 1rem; padding-right: 1rem; }
+.rb-px-4 { padding-left: 1.5rem; padding-right: 1.5rem; }
+.rb-px-5 { padding-left: 3rem; padding-right: 3rem; }
+
+.rb-text-center { text-align: center; }
+.rb-text-left { text-align: left; }
+.rb-text-right { text-align: right; }
+
+.rb-d-flex { display: flex; }
+.rb-align-center { align-items: center; }
+.rb-justify-between { justify-content: space-between; }
+.rb-flex-col { flex-direction: column; }
+
+/* City Section */
+.rb-city-section {
+    padding: 4rem 0;
+    background-color: var(--bg-light);
+}
+
+.rb-city-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.rb-city-text {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.rb-city-subtitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    color: var(--text-dark);
+}
+
+/* Presence Section */
+.rb-presence-section {
+    padding: 3rem 0;
+    background-color: var(--bg-muted);
+}
+
+.rb-presence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.rb-presence-link {
+    padding: 0.75rem;
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.2s, color 0.2s;
+    border-radius: 4px;
+}
+
+.rb-presence-link:hover {
+    background-color: rgba(62, 119, 255, 0.1);
+    color: var(--primary-dark);
+}
+
+@media (max-width: 767px) {
+    .rb-presence-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .rb-presence-link {
+        font-size: 0.85rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .rb-presence-grid {
+        grid-template-columns: 1fr;
+    }
+} 
